@@ -31,3 +31,7 @@ yarn-error.log*
 ### OS / Misc ###
 .DS_Store
 Thumbs.db
+
+node_modules/
+dist/
+build/

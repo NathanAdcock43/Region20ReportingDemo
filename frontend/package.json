@@ -1,5 +1,5 @@
 {
-  "name": "frontend",
+  "name": "region20-frontend",
   "version": "1.0.0",
   "main": "index.js",
   "devDependencies": {

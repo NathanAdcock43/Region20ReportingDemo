@@ -1,11 +1,56 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Region20 UI</title></head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Region20 Reporting Demo</title>
+    <link rel="stylesheet" href="/src/style.css" />
+</head>
 <body>
-<h1>Region20 Demo</h1>
-<div id="output"></div>
+<header class="container">
+    <h1>Region20 Reporting Demo</h1>
+    <p class="muted">Vanilla JS UI calling Spring Boot APIs</p>
+</header>
+
+<main class="container grid">
+    <section class="card">
+        <h2>Record Score</h2>
+        <form id="scoreForm">
+            <label>Student ID <input type="number" id="studentId" required /></label>
+            <label>Assessment ID <input type="number" id="assessmentId" required /></label>
+            <label>Points Earned <input type="number" id="earned" step="0.01" required /></label>
+            <label>Points Possible <input type="number" id="possible" step="0.01" required /></label>
+            <button type="submit">Submit Score</button>
+        </form>
+        <pre id="scoreResult" class="mono"></pre>
+    </section>
+
+    <section class="card">
+        <h2>Student Progress</h2>
+        <form id="progressForm">
+            <label>Student ID <input type="number" id="pStudentId" required /></label>
+            <label>Term <input type="text" id="term" value="2025-Fall" required /></label>
+            <button type="submit">Load Progress</button>
+        </form>
+        <div id="progressTableWrapper">
+            <table id="progressTable">
+                <thead>
+                <tr>
+                    <th>Course</th>
+                    <th>Grade %</th>
+                </tr>
+                </thead>
+                <tbody id="progressBody"></tbody>
+            </table>
+        </div>
+        <pre id="progressRaw" class="mono muted"></pre>
+    </section>
+</main>
+
+<footer class="container small muted">
+    Served by Spring Boot in production. During local dev you can run Vite.
+</footer>
+
 <script type="module" src="/src/main.js"></script>
 </body>
 </html>
